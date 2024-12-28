@@ -23,7 +23,7 @@ function DrugInteractionForm() {
     setLoading(true);
 
     try {
-      const response = await api.post("/check-interaction", { 
+      const response = await api.post("/check-interaction", {
         drug_1: drug1,
         drug_2: drug2
       });
@@ -36,7 +36,7 @@ function DrugInteractionForm() {
     } catch (err) {
       console.error("API Error:", err);
       setError(
-        err.response?.data?.error || 
+        err.response?.data?.error ||
         "Failed to fetch drug interactions. Please check if the backend server is running."
       );
     } finally {
@@ -45,14 +45,14 @@ function DrugInteractionForm() {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>
+    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto', backgroundColor: '#f9f9f9', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
+      <h1 style={{ textAlign: 'center', marginBottom: '30px', color: '#333' }}>
         Drug Interaction Checker
       </h1>
 
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
         <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="drug1" style={{ display: 'block', marginBottom: '5px' }}>
+          <label htmlFor="drug1" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#555' }}>
             First Drug:
           </label>
           <input
@@ -62,16 +62,20 @@ function DrugInteractionForm() {
             onChange={(e) => setDrug1(e.target.value)}
             required
             style={{
-              width: '300px',
-              padding: '8px',
+              width: '100%',
+              maxWidth: '300px',
+              padding: '10px',
               borderRadius: '4px',
-              border: '1px solid #ccc'
+              border: '1px solid #ccc',
+              transition: 'border-color 0.3s',
             }}
+            onFocus={(e) => e.target.style.borderColor = '#007bff'}
+            onBlur={(e) => e.target.style.borderColor = '#ccc'}
           />
         </div>
 
         <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="drug2" style={{ display: 'block', marginBottom: '5px' }}>
+          <label htmlFor="drug2" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold', color: '#555' }}>
             Second Drug:
           </label>
           <input
@@ -81,11 +85,15 @@ function DrugInteractionForm() {
             onChange={(e) => setDrug2(e.target.value)}
             required
             style={{
-              width: '300px',
-              padding: '8px',
+              width: '100%',
+              maxWidth: '300px',
+              padding: '10px',
               borderRadius: '4px',
-              border: '1px solid #ccc'
+              border: '1px solid #ccc',
+              transition: 'border-color 0.3s',
             }}
+            onFocus={(e) => e.target.style.borderColor = '#007bff'}
+            onBlur={(e) => e.target.style.borderColor = '#ccc'}
           />
         </div>
 
@@ -99,20 +107,24 @@ function DrugInteractionForm() {
             border: 'none',
             borderRadius: '4px',
             cursor: loading ? 'not-allowed' : 'pointer',
-            opacity: loading ? 0.7 : 1
+            opacity: loading ? 0.7 : 1,
+            transition: 'background-color 0.3s',
           }}
+          onMouseOver={(e) => e.target.style.backgroundColor = '#0056b3'}
+          onMouseOut={(e) => e.target.style.backgroundColor = '#007bff'}
         >
           {loading ? 'Checking...' : 'Check Interaction'}
         </button>
       </form>
 
       {error && (
-        <div style={{ 
-          padding: '10px', 
-          backgroundColor: '#ffebee', 
+        <div style={{
+          padding: '10px',
+          backgroundColor: '#ffebee',
           color: '#c62828',
           borderRadius: '4px',
-          marginBottom: '20px'
+          marginBottom: '20px',
+          border: '1px solid #c62828'
         }}>
           {error}
         </div>
@@ -126,7 +138,7 @@ function DrugInteractionForm() {
           marginTop: '20px'
         }}>
           <h2 style={{ marginBottom: '15px', color: '#333' }}>Interaction Details</h2>
-          
+
           <div style={{ marginBottom: '15px' }}>
             <h3 style={{ color: '#444', fontSize: '1.1em', marginBottom: '5px' }}>Drugs</h3>
             <p><strong>Drug 1:</strong> {interaction.drug_1}</p>
@@ -143,18 +155,18 @@ function DrugInteractionForm() {
             <p>{interaction.mechanism}</p>
           </div>
 
-          <div style={{ 
+          <div style={{
             marginBottom: '15px',
             padding: '10px',
-            backgroundColor: interaction.severity === 'High' ? '#ffebee' : 
-                           interaction.severity === 'Moderate' ? '#fff3e0' : '#e8f5e9',
+            backgroundColor: interaction.severity === 'High' ? '#ffebee' :
+              interaction.severity === 'Moderate' ? '#fff3e0' : '#e8f5e9',
             borderRadius: '4px'
           }}>
             <h3 style={{ color: '#444', fontSize: '1.1em', marginBottom: '5px' }}>Severity</h3>
             <p><strong>{interaction.severity}</strong></p>
           </div>
 
-          <div style={{ 
+          <div style={{
             marginBottom: '15px',
             padding: '10px',
             backgroundColor: '#e3f2fd',
