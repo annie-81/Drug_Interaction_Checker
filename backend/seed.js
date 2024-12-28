@@ -783,7 +783,7 @@ const interactions = [
     drug_2: "Aminoglycosides",
     interaction: "Increased risk of nephrotoxicity and ototoxicity.",
     severity: "High",
-    mechanism: "Both drugs can affect renal function."
+    mechanism: "Both drugs can affect renal function.",
     recommendations: "Monitor renal function and consider alternatives."
   },
   {
@@ -1042,31 +1042,31 @@ mongoose.connect('mongodb://127.0.0.1:27017/drug_interactions', {
   serverSelectionTimeoutMS: 5000,
   socketTimeoutMS: 45000,
 })
-.then(async () => {
-  console.log('Connected to MongoDB.');
-  
-  try {
-    // Clear existing interactions
-    await Interaction.deleteMany({});
-    console.log('Cleared existing interactions.');
+  .then(async () => {
+    console.log('Connected to MongoDB.');
 
-    // Insert new interactions
-    const result = await Interaction.insertMany(
-      interactions.map(interaction => ({
-        ...interaction,
-        drug_1: interaction.drug_1.toLowerCase(),
-        drug_2: interaction.drug_2.toLowerCase()
-      }))
-    );
-    console.log(`Added ${result.length} interactions to the database.`);
-  } catch (error) {
-    console.error('Error seeding database:', error);
-  } finally {
-    mongoose.disconnect();
-    console.log('Disconnected from MongoDB.');
-  }
-})
-.catch(err => {
-  console.error('MongoDB connection error:', err);
-  process.exit(1);
-});
+    try {
+      // Clear existing interactions
+      await Interaction.deleteMany({});
+      console.log('Cleared existing interactions.');
+
+      // Insert new interactions
+      const result = await Interaction.insertMany(
+        interactions.map(interaction => ({
+          ...interaction,
+          drug_1: interaction.drug_1.toLowerCase(),
+          drug_2: interaction.drug_2.toLowerCase()
+        }))
+      );
+      console.log(`Added ${result.length} interactions to the database.`);
+    } catch (error) {
+      console.error('Error seeding database:', error);
+    } finally {
+      mongoose.disconnect();
+      console.log('Disconnected from MongoDB.');
+    }
+  })
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+    process.exit(1);
+  });
