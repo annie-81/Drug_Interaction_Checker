@@ -10,6 +10,150 @@ const interactions = [
     mechanism: "Both drugs interfere with blood clotting through different mechanisms",
     recommendations: "Avoid combination unless specifically directed by healthcare provider. Regular monitoring of INR required."
   },
+{
+    drug_1: "Ibuprofen",
+    drug_2: "Lisinopril",
+    interaction: "Reduced antihypertensive effect.",
+    severity: "Moderate",
+    mechanism: "NSAIDs can reduce the antihypertensive effect of ACE inhibitors.",
+    recommendations: "Consider alternative pain management strategies."
+  },
+  {
+    drug_1: "Dolo 650",
+    drug_2: "Paracetamol",
+    interaction: "Potential for duplicate dosing.",
+    severity: "Low",
+    mechanism: "Both medications contain paracetamol, leading to an overdose risk.",
+    recommendations: "Avoid concurrent use; monitor total paracetamol intake."
+  },
+  {
+    drug_1: "Cetirizine",
+    drug_2: "Dolo 650",
+    interaction: "No significant interaction reported.",
+    severity: "Low",
+    mechanism: "Cetirizine and paracetamol do not share metabolic pathways.",
+    recommendations: "Safe for concurrent use but monitor for individual allergies."
+  },
+  {
+    drug_1: "Azithromycin",
+    drug_2: "Cetirizine",
+    interaction: "Potential QT prolongation.",
+    severity: "Moderate",
+    mechanism: "Both drugs can increase the risk of QT interval prolongation.",
+    recommendations: "Use cautiously in patients with pre-existing heart conditions."
+  },
+  {
+    drug_1: "Paracetamol",
+    drug_2: "Ibuprofen",
+    interaction: "Increased risk of gastrointestinal side effects.",
+    severity: "Low",
+    mechanism: "Both are metabolized by the liver, but no significant overlap.",
+    recommendations: "Can be used together with appropriate dosing intervals."
+  },
+  {
+    drug_1: "Dolo 650",
+    drug_2: "Azithromycin",
+    interaction: "Increased risk of liver enzyme elevation.",
+    severity: "Moderate",
+    mechanism: "Both drugs are metabolized by the liver, leading to potential hepatotoxicity.",
+    recommendations: "Monitor liver function tests during prolonged use."
+  },
+  {
+    drug_1: "Cetirizine",
+    drug_2: "Loratadine",
+    interaction: "Duplicate antihistamine effects.",
+    severity: "Low",
+    mechanism: "Both are H1 receptor blockers, leading to potential drowsiness.",
+    recommendations: "Avoid concurrent use; choose one antihistamine."
+  },
+  {
+    drug_1: "Paracetamol",
+    drug_2: "Codeine",
+    interaction: "Enhanced analgesic effect.",
+    severity: "Moderate",
+    mechanism: "Codeine is converted to morphine, enhancing paracetamol’s analgesic action.",
+    recommendations: "Monitor for signs of sedation and respiratory depression."
+  },
+  {
+    drug_1: "Azithromycin",
+    drug_2: "Warfarin",
+    interaction: "Increased anticoagulant effect.",
+    severity: "High",
+    mechanism: "Azithromycin can alter gut flora, reducing vitamin K production.",
+    recommendations: "Monitor INR levels closely and adjust warfarin dosage as needed."
+  },
+  {
+    drug_1: "Paracetamol",
+    drug_2: "Alcohol",
+    interaction: "Increased risk of liver damage.",
+    severity: "High",
+    mechanism: "Both substances are metabolized by the liver, increasing hepatotoxicity risk.",
+    recommendations: "Avoid alcohol consumption while taking paracetamol."
+  },
+  {
+    drug_1: "Cetirizine",
+    drug_2: "Alcohol",
+    interaction: "Increased drowsiness and sedation.",
+    severity: "Moderate",
+    mechanism: "Both depress the central nervous system.",
+    recommendations: "Avoid alcohol consumption while taking cetirizine."
+  },
+  {
+    drug_1: "Azithromycin",
+    drug_2: "Amiodarone",
+    interaction: "Risk of severe QT prolongation.",
+    severity: "High",
+    mechanism: "Both drugs can prolong the QT interval, leading to arrhythmias.",
+    recommendations: "Avoid combination in patients with cardiac conditions."
+  },
+  {
+    drug_1: "Paracetamol",
+    drug_2: "Phenylephrine",
+    interaction: "Increased blood pressure risk.",
+    severity: "Moderate",
+    mechanism: "Phenylephrine is a vasoconstrictor, and paracetamol may enhance this effect.",
+    recommendations: "Monitor blood pressure in hypertensive patients."
+  },
+  {
+    drug_1: "Dolo 650",
+    drug_2: "Aspirin",
+    interaction: "Increased risk of gastrointestinal irritation.",
+    severity: "Moderate",
+    mechanism: "Both drugs may irritate the stomach lining.",
+    recommendations: "Take with food to reduce gastrointestinal side effects."
+  },
+  {
+    drug_1: "Cetirizine",
+    drug_2: "Dexamethasone",
+    interaction: "No significant interaction reported.",
+    severity: "Low",
+    mechanism: "No shared metabolic or pharmacodynamic pathways.",
+    recommendations: "Safe for concurrent use under medical supervision."
+  },
+  {
+    drug_1: "Azithromycin",
+    drug_2: "Ibuprofen",
+    interaction: "No significant interaction reported.",
+    severity: "Low",
+    mechanism: "No shared metabolic or pharmacodynamic pathways.",
+    recommendations: "Safe for concurrent use under medical supervision."
+  },
+  {
+    drug_1: "Paracetamol",
+    drug_2: "Metformin",
+    interaction: "Risk of lactic acidosis in renal impairment.",
+    severity: "Moderate",
+    mechanism: "Metformin can accumulate in renal impairment, and paracetamol adds stress to kidney function.",
+    recommendations: "Monitor renal function in at-risk patients."
+  },
+  {
+    drug_1: "Azithromycin",
+    drug_2: "Antacids",
+    interaction: "Reduced absorption of azithromycin.",
+    severity: "Low",
+    mechanism: "Antacids containing magnesium or aluminum reduce azithromycin absorption.",
+    recommendations: "Take azithromycin at least 2 hours before or after antacids."
+  },
   {
     drug_1: "Simvastatin",
     drug_2: "Gemfibrozil",
@@ -783,7 +927,7 @@ const interactions = [
     drug_2: "Aminoglycosides",
     interaction: "Increased risk of nephrotoxicity and ototoxicity.",
     severity: "High",
-    mechanism: "Both drugs can affect renal function."
+    mechanism: "Both drugs can affect renal function.",
     recommendations: "Monitor renal function and consider alternatives."
   },
   {
@@ -930,6 +1074,159 @@ const interactions = [
     mechanism: "Both drugs affect serotonin levels.",
     recommendations: "Monitor for symptoms of serotonin syndrome."
   },
+    {
+      drug_1: "Warfarin",
+      drug_2: "Aspirin",
+      interaction: "Increased risk of bleeding.",
+      severity: "High",
+      mechanism: "Aspirin can enhance the anticoagulant effect of warfarin.",
+      recommendations: "Monitor INR levels closely and adjust warfarin dosage as needed."
+    },
+    {
+      drug_1: "Ibuprofen",
+      drug_2: "Lisinopril",
+      interaction: "Reduced antihypertensive effect.",
+      severity: "Moderate",
+      mechanism: "NSAIDs can reduce the antihypertensive effect of ACE inhibitors.",
+      recommendations: "Consider alternative pain management strategies."
+    },
+    {
+      drug_1: "Dolo 650",
+      drug_2: "Paracetamol",
+      interaction: "Potential for duplicate dosing.",
+      severity: "Low",
+      mechanism: "Both medications contain paracetamol, leading to an overdose risk.",
+      recommendations: "Avoid concurrent use; monitor total paracetamol intake."
+    },
+    {
+      drug_1: "Cetirizine",
+      drug_2: "Dolo 650",
+      interaction: "No significant interaction reported.",
+      severity: "Low",
+      mechanism: "Cetirizine and paracetamol do not share metabolic pathways.",
+      recommendations: "Safe for concurrent use but monitor for individual allergies."
+    },
+    {
+      drug_1: "Azithromycin",
+      drug_2: "Cetirizine",
+      interaction: "Potential QT prolongation.",
+      severity: "Moderate",
+      mechanism: "Both drugs can increase the risk of QT interval prolongation.",
+      recommendations: "Use cautiously in patients with pre-existing heart conditions."
+    },
+    {
+      drug_1: "Paracetamol",
+      drug_2: "Ibuprofen",
+      interaction: "Increased risk of gastrointestinal side effects.",
+      severity: "Low",
+      mechanism: "Both are metabolized by the liver, but no significant overlap.",
+      recommendations: "Can be used together with appropriate dosing intervals."
+    },
+    {
+      drug_1: "Dolo 650",
+      drug_2: "Azithromycin",
+      interaction: "Increased risk of liver enzyme elevation.",
+      severity: "Moderate",
+      mechanism: "Both drugs are metabolized by the liver, leading to potential hepatotoxicity.",
+      recommendations: "Monitor liver function tests during prolonged use."
+    },
+    {
+      drug_1: "Cetirizine",
+      drug_2: "Loratadine",
+      interaction: "Duplicate antihistamine effects.",
+      severity: "Low",
+      mechanism: "Both are H1 receptor blockers, leading to potential drowsiness.",
+      recommendations: "Avoid concurrent use; choose one antihistamine."
+    },
+    {
+      drug_1: "Paracetamol",
+      drug_2: "Codeine",
+      interaction: "Enhanced analgesic effect.",
+      severity: "Moderate",
+      mechanism: "Codeine is converted to morphine, enhancing paracetamol’s analgesic action.",
+      recommendations: "Monitor for signs of sedation and respiratory depression."
+    },
+    {
+      drug_1: "Azithromycin",
+      drug_2: "Warfarin",
+      interaction: "Increased anticoagulant effect.",
+      severity: "High",
+      mechanism: "Azithromycin can alter gut flora, reducing vitamin K production.",
+      recommendations: "Monitor INR levels closely and adjust warfarin dosage as needed."
+    },
+    {
+      drug_1: "Paracetamol",
+      drug_2: "Alcohol",
+      interaction: "Increased risk of liver damage.",
+      severity: "High",
+      mechanism: "Both substances are metabolized by the liver, increasing hepatotoxicity risk.",
+      recommendations: "Avoid alcohol consumption while taking paracetamol."
+    },
+    {
+      drug_1: "Cetirizine",
+      drug_2: "Alcohol",
+      interaction: "Increased drowsiness and sedation.",
+      severity: "Moderate",
+      mechanism: "Both depress the central nervous system.",
+      recommendations: "Avoid alcohol consumption while taking cetirizine."
+    },
+    {
+      drug_1: "Azithromycin",
+      drug_2: "Amiodarone",
+      interaction: "Risk of severe QT prolongation.",
+      severity: "High",
+      mechanism: "Both drugs can prolong the QT interval, leading to arrhythmias.",
+      recommendations: "Avoid combination in patients with cardiac conditions."
+    },
+    {
+      drug_1: "Paracetamol",
+      drug_2: "Phenylephrine",
+      interaction: "Increased blood pressure risk.",
+      severity: "Moderate",
+      mechanism: "Phenylephrine is a vasoconstrictor, and paracetamol may enhance this effect.",
+      recommendations: "Monitor blood pressure in hypertensive patients."
+    },
+    {
+      drug_1: "Dolo 650",
+      drug_2: "Aspirin",
+      interaction: "Increased risk of gastrointestinal irritation.",
+      severity: "Moderate",
+      mechanism: "Both drugs may irritate the stomach lining.",
+      recommendations: "Take with food to reduce gastrointestinal side effects."
+    },
+    {
+      drug_1: "Cetirizine",
+      drug_2: "Dexamethasone",
+      interaction: "No significant interaction reported.",
+      severity: "Low",
+      mechanism: "No shared metabolic or pharmacodynamic pathways.",
+      recommendations: "Safe for concurrent use under medical supervision."
+    },
+    {
+      drug_1: "Azithromycin",
+      drug_2: "Ibuprofen",
+      interaction: "No significant interaction reported.",
+      severity: "Low",
+      mechanism: "No shared metabolic or pharmacodynamic pathways.",
+      recommendations: "Safe for concurrent use under medical supervision."
+    },
+    {
+      drug_1: "Paracetamol",
+      drug_2: "Metformin",
+      interaction: "Risk of lactic acidosis in renal impairment.",
+      severity: "Moderate",
+      mechanism: "Metformin can accumulate in renal impairment, and paracetamol adds stress to kidney function.",
+      recommendations: "Monitor renal function in at-risk patients."
+    },
+    {
+      drug_1: "Azithromycin",
+      drug_2: "Antacids",
+      interaction: "Reduced absorption of azithromycin.",
+      severity: "Low",
+      mechanism: "Antacids containing magnesium or aluminum reduce azithromycin absorption.",
+      recommendations: "Take azithromycin at least 2 hours before or after antacids."
+    },
+  
   {
     drug_1: "Digoxin",
     drug_2: "Amiodarone",
@@ -1037,8 +1334,12 @@ const interactions = [
   // ... Additional 125 drug interactions
 ];
 
+
+
 // Connect to MongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/drug_interactions', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
   serverSelectionTimeoutMS: 5000,
   socketTimeoutMS: 45000,
 })

@@ -46,9 +46,9 @@ function DrugInteractionForm() {
 
   return (
     <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '30px' }}>
-        Drug Interaction Checker
-      </h1>
+      <p style={{ textAlign: 'center', marginBottom: '30px' ,fontSize: 30,fontWeight:'bold',fontFamily:'sans-serif' ,color:'#5D6D7E'}}>
+      Enter drug names to check for potential interactions
+      </p>
 
       <form onSubmit={handleSubmit} style={{ marginBottom: '20px' }}>
         <div style={{ marginBottom: '15px' }}>
@@ -93,7 +93,7 @@ function DrugInteractionForm() {
           type="submit"
           disabled={loading}
           style={{
-            backgroundColor: '#007bff',
+            backgroundColor: '#007B6D',
             color: 'white',
             padding: '10px 20px',
             border: 'none',

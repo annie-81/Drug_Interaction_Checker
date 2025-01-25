@@ -8,7 +8,7 @@ function App() {
       {/* Application Header */}
       <header className="App-header">
         <h1>Drug Interaction Checker</h1>
-        <p>Enter drug names to check for potential interactions.</p>
+        
       </header>
       
       {/* Drug Interaction Form */}
